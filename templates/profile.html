@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+Flood Project = Register
+{% endblock %}
+{% block body %}
+   
+   <!--  ************************* Blog Starts Here ************************** -->
+   <div class="blog" style="padding-top: 150px;">
+    <div class="row session-title">
+        <h2>My Profile</h2>
+        <p></p>
+    </div>
+     <div class="container">
+         <div class="row">
+             <div class="col-md-12 col-sm-6">
+                 <div class="blog-singe no-margin row">
+                     <div class="col-sm-5 blog-img-tab">
+                         <img src="/static/assets/images/user-icon-in-trendy-flat-style-isolated-on-grey-background-user-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-free-vector.jpg" alt="">
+                     </div>
+                     <div class="col-sm-7 blog-content-tab" style="padding-top: 100px;">
+                         <h1>Your Name : {{user.Name}}</h1>
+                         <h2>Your Email ID : {{user.EmailID}}</h2>
+                        <h2>Your Password : {{user.Password}}</h2>
+                        <h2>Your Mobile Number : {{user.PhoneNo}}</h2>
+                         
+                         <a href="{% url 'updateprofile' %}">Update Profile <i class="fas fa-arrow-right"></i></a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+<!-- ######## Blog End ####### -->
+{% endblock %}

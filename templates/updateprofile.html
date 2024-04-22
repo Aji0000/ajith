@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}
+Flood Project = Register
+{% endblock %}
+{% block body %}
+<!--  ************************* Page Title Starts Here ************************** -->
+      <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Profile Updation</h2>
+                <ul>
+                     <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> profile update</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!-- ######## Page  Title End ####### -->
+
+
+
+<div class="row contact-rooo no-margin">
+<div class="container">
+<div class="row">
+    
+
+ <div style="padding:20px" class="col-sm-6">
+ <h2 style="font-size:18px">Profile Update Form</h2>
+ {% if messages %}
+ {% for i in messages %}
+ {{i}}
+ {% endfor %}
+ {% endif %}
+ <form method="POST">
+    {% csrf_token %}
+     <div class="row">
+         <div style="padding-top:10px;" class="col-sm-3"><label>Enter Name :</label></div>
+         <div class="col-sm-8"><input type="text" value="{{user.Name}}" name="name" class="form-control input-sm"  ></div>
+     </div>
+     <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Password  :</label></div>
+        <div class="col-sm-8"><input type="password" name="password" value="{{user.Password}}" class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Confirm Password :</label></div>
+        <div class="col-sm-8"><input type="password" name="cpassword" placeholder="Confirm Password" class="form-control input-sm"  ></div>
+    </div>
+      <div style="margin-top:10px;" class="row">
+         <div style="padding-top:10px;" class="col-sm-3"><label>Mobile Number:</label></div>
+         <div class="col-sm-8"><input type="text" name="phone" value="{{user.PhoneNo}}" class="form-control input-sm"  ></div>
+     </div>
+      <div style="margin-top:10px;" class="row">
+         <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+         <div class="col-sm-8">
+          <button class="btn btn-info btn-sm" type="submit">Update</button>
+         </div>
+     </div>
+    </form>
+ </div>
+  <div class="col-sm-6">
+         
+       <div style="margin:50px" class="serv"> 
+     
+    
+  
+                   
+   
+
+
+
+ 
+     
+     
+   
+</div>    
+     
+  
+</div>
+
+ </div>
+</div>
+
+</div>
+{% endblock %}

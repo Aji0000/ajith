@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% block title %}
+Flood Project = Prediction
+{% endblock %}
+{% block body %}
+
+<!--  ************************* Page Title Starts Here ************************** -->
+    <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Flood Prediction</h2>
+                <ul>
+                     <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> flood prediction</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!-- ######## Page  Title End ####### -->
+
+{% if current_user %}
+
+<div class="row contact-rooo no-margin">
+<div class="container">
+<div class="row">
+    
+
+ <div style="padding:20px" class="col-sm-6">
+ <h2 style="font-size:18px">Prediction Form</h2>
+ 
+ <form method="POST">
+    {% csrf_token %}
+     <div class="row">
+         <div style="padding-top:10px;" class="col-sm-3"><label>Enter Year :</label></div>
+         <div class="col-sm-8"><input type="text" placeholder="Enter Year" name="year" class="form-control input-sm"  ></div>
+     </div>
+     <div style="margin-top:10px;" class="row">
+         <div style="padding-top:10px;" class="col-sm-3"><label>Enter JAN: </label></div>
+         <div class="col-sm-8"><input type="text" name="jan" placeholder="Enter JAN: " class="form-control input-sm"  ></div>
+     </div>
+     <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter FEB: </label></div>
+        <div class="col-sm-8"><input type="text" name="feb" placeholder="Enter FEB: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter MAR: </label></div>
+        <div class="col-sm-8"><input type="text" name="mar" placeholder="Enter MAR: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter APR: </label></div>
+        <div class="col-sm-8"><input type="text" name="apr" placeholder="Enter APR: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter MAY: </label></div>
+        <div class="col-sm-8"><input type="text" name="may" placeholder="Enter MAY: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter JUN: </label></div>
+        <div class="col-sm-8"><input type="text" name="jun" placeholder="Enter JUNE: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter JUL: </label></div>
+        <div class="col-sm-8"><input type="text" name="jul" placeholder="Enter JUL: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter AUG: </label></div>
+        <div class="col-sm-8"><input type="text" name="aug" placeholder="Enter AUG: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter SEP: </label></div>
+        <div class="col-sm-8"><input type="text" name="sep" placeholder="Enter SEP: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter OCT: </label></div>
+        <div class="col-sm-8"><input type="text" name="oct" placeholder="Enter OCT: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter NOV: </label></div>
+        <div class="col-sm-8"><input type="text" name="nov" placeholder="Enter NOV: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter DEC: </label></div>
+        <div class="col-sm-8"><input type="text" name="dec" placeholder="Enter DEC: " class="form-control input-sm"  ></div>
+    </div>
+    <div style="margin-top:10px;" class="row">
+        <div style="padding-top:10px;" class="col-sm-3"><label>Enter ANNUAL RAINFALL: </label></div>
+        <div class="col-sm-8"><input type="text" name="annual" placeholder="Enter ANNUAL RAINFALL: " class="form-control input-sm"  ></div>
+    </div>
+     
+      <div style="margin-top:10px;" class="row">
+         <div style="padding-top:10px;" class="col-sm-3"><label></label></div>
+         <div class="col-sm-8">
+          <button class="btn btn-info btn-sm" type="submit">Predict</button>
+         </div>
+     </div>
+    </form>
+ </div>
+  <div class="col-sm-6">
+         
+       <div style="margin:50px" class="serv"> 
+     
+    
+  
+                   
+   
+<h2 style="margin-top:10px;">Address</h2>
+
+    {% if messages %}
+        {% if result == 1 %}
+            {% for i in messages %}
+                <div class="alert alert-danger">{{i}}</div>
+            {% endfor %}
+            <button class="btn btn-danger btn-lg">Flood Alert</button><br>
+            <a href="https://trivandrum.nic.in/en/disaster-management/"><button class="btn btn-warning">Reporting to authority</button></a>
+            <a href="{% url 'reliefcamps' %}"><button class="btn btn-warning">Relief Camps</button></a>
+        {% else %}
+            {% for i in messages %}
+                <div class="alert alert-success">{{i}}</div>
+            {% endfor %}
+        {% endif %}
+ {% endif %}
+
+
+
+ 
+     
+     
+   
+</div>    
+     
+  
+</div>
+
+ </div>
+</div>
+
+</div>
+{% else %}
+<div class="row contact-rooo no-margin">
+    <div class="container">
+    <div class="row">
+       
+    
+     <div style="padding:20px" class="col-sm-6">
+        <h2 style="font-size:18px">You dont have permission to do prediction without Login </h2>
+        <h2><a href="{% url 'login' %}">Login here</a></h2>
+        </div>
+        </div>
+        </div>
+        </div>
+    {% endif %}
+{% endblock %}

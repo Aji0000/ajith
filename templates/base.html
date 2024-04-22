@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="shortcut icon" href="static/assets/images/fav.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="static/assets/plugins/slider/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/assets/plugins/slider/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="static/assets/css/style.css" />
+</head>
+
+    <body>
+    
+    <header>
+        {% if current_user %}
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-12 left-item">
+                        <ul>
+                            <li>Logined As  {{user.Name}}</li>
+                            
+                        </ul>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+        {% endif %}
+        <div id="nav-head" class="header-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-12 nav-img">
+                        <img src="/static/assets/images/360_F_204637749_Up19Ub0Eae3J7HqkkCK5OyF0mC8WbWzw.jpg" alt="" style="width:110px;height: 100px;">
+                        <img src="/static/assets/images/download.png" alt="" style="width:100px;height: 100px;">
+                        
+                       <a data-toggle="collapse" data-target="#menu" href="#menu" ><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                    </div>
+                    <div id="menu" class="col-md-9 d-none d-md-block nav-item">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="admin/">Admin Login</a></li>
+                            
+                            {% if current_user %}
+                            <li><a href="{% url 'profile' %}">My Profile</a></li>
+                            <li><a href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                            <li><a href="{% url 'register' %}">UserRegsiter</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </header>
+
+  
+    {% block body %}{% endblock %}
+    
+                <!-- ################# Footer Starts Here#######################--->
+
+
+
+    <div class="copy">
+            <div class="container" style="text-align: center;">
+                <a href="https://atees.org/"> &copy; </a>
+                
+                <span>
+                
+        </span>
+            </div>
+
+        </div>   
+    
+    </body>
+
+<script src="static/assets/js/jquery-3.2.1.min.js"></script>
+<script src="static/assets/js/popper.min.js"></script>
+<script src="static/assets/js/bootstrap.min.js"></script>
+<script src="static/assets/plugins/slider/js/owl.carousel.min.js"></script>
+<script src="static/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+
+<script src="static/assets/js/script.js"></script>
+
+
+
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+Flood Project = reliefcamps
+{% endblock %}
+{% block body %}
+       <!--  ************************* Page Title Starts Here ************************** -->
+       <div class="page-nav no-margin row">
+        <div class="container">
+            <div class="row">
+                <h2>Relief Camps</h2>
+                <ul>
+                    <li> <a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><i class="fas fa-angle-double-right"></i> Relief camps</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<!-- ######## Page  Title End ####### -->
+     <!-- ################# Our Team Starts Here#######################--->
+     <section class="our-team team-11"  >
+        <div class="container">
+            
+            <div class="row team-row">
+{% for i in camp %}
+                <div class="col-md-3 col-sm-6">
+                    <div class="single-usr">
+                        <img src="{{i.Pic}}" alt="" style="width: 260px;height: 200px;">
+                        <div class="det-o">
+                            <h4>Place : {{i.Place}}</h4>
+                            <i>Availability : {{i.Avalilability}}</i>
+                        </div>
+                    </div>
+               </div>
+{% endfor %}
+            </div>
+        </div>
+
+
+    </section>
+{% endblock %}

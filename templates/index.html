@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}
+Flood Project
+{% endblock %}
+{% block body %}
+    <!-- ################# Slider Starts Here#######################--->
+    <div class="slider">
+        <!-- Set up your HTML -->
+        <div class="owl-carousel ">
+            <div class="slider-img">
+                <div class="item">
+                    <div class="slider-img"><img src="/static/assets/images/header11.jpg" alt="" style="height: 500px;"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-12 col-xs-12">
+                                <div class="slider-captions">
+                                    <h1 class="slider-title">Flood Prediction</h1>
+                                    <p class="slider-text hidden-xs">floods are the most destructive, causing massive damage to human life, infrastructure, agriculture, and the socioeconomic system.</p>
+                                    <a href="{% url 'prediction' %}" class="btn btn-info hidden-xs">Go to Flood Prediction(past/Future) </a>
+                                    <a href="{% url 'presentprediction' %}" class="btn btn-info hidden-xs">Go to Current Flood Prediction </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+     <!-- ################# Health Care Here#######################--->
+     
+     <section class="health-care">
+         <div class="container">
+            <div class="row">
+                 <div class="col-md-4 col-sm-6 vd">
+                     <img src="/static/assets/images/services/AIZSBXCQ45KDHPZ4VKOUTNEHII.jpg" alt="">
+                     <h4>Floods</h4>
+                     
+                     <a href="{% url 'floods' %}"><button class="btn btn-info">Readmore <i class="fas fa-arrow-right"></i></button></a>
+                 </div>
+                 <div class="col-md-4 col-sm-6 vd">
+                     <img src="/static/assets/images/services/fundraising,-flood-relief-camp-flyer-design-template-bb9f9e5f066ea36add3f193791be9810_screen.jpg" alt="" style="height: 230px;">
+                     <h4>Relief Camps</h4>
+                    
+                     <a href="{% url 'reliefcamps' %}"><button class="btn btn-info">Readmore <i class="fas fa-arrow-right"></i></button></a>
+                 </div>
+                 <div class="col-md-4 col-sm-6 vd">
+                     <img src="/static/assets/images/services/prevention.jpg" alt="">
+                     <h4>Flood Prevention</h4>
+                    
+                     <a href="{% url 'prevention' %}"><button class="btn btn-info">Readmore <i class="fas fa-arrow-right"></i></button></a>
+                 </div>
+            </div>
+            
+             
+         </div>
+     </section>
+     
+{% endblock %}
